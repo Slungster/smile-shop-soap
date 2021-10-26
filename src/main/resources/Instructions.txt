@@ -1,0 +1,27 @@
+INSTRUCTIONS
+
+ETAPE 1
+
+- Créer la BDD 'smileshop' en suivant le mode opératoire du fichier smileshop_database.txt (se trouve dans le même dossier que ce fichier d'instructions)
+
+ETAPE 2
+
+- Modifier, si nécessaire, dans le fichier application.properties (se trouve dans le même dossier que ce fichier d'instructions), la ligne suivante :
+spring.datasource.url=jdbc:postgresql://localhost:5432/smileshop
+
+Si votre BDD ne tourne pas sur le port 5432 de localhost, il faut modifier l'information
+
+ETAPE 3
+
+- Lancer mvn clean install
+
+ETAPE 4 (Pour l'instant c'est un packaging jar avec spring-boot, le projet est lancé sur le tomcat embarqué de spring-boot)
+
+- Se placer sur le répertoire du projet, et lancer en ligne de commande : mvn spring-boot:run
+Il est également possible de le lancer via le terminal sur IntelliJ, ou lancer manuellement la méthode main de la classe MySpringApplication
+
+Une fois le projet lancé, voici les liens pour les wsdl nécessaires au tests sur SoapUi par exemple :
+http://localhost:8080/soapws/merchants.wsdl
+http://localhost:8080/soapws/products.wsdl
+http://localhost:8080/soapws/associations.wsdl
+
