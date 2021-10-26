@@ -8,26 +8,9 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:element name="getMerchantRequest">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="merchantId" type="xs:long" minOccurs="1" maxOccurs="1" nillable="true"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="getMerchantResponse">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="merchantDto" type="tns:merchantDto"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
     <xs:element name="addMerchantRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="createDate" type="xs:date"/>
                 <xs:element name="name" type="xs:string"/>
                 <xs:element name="lastName" type="xs:string"/>
                 <xs:element name="birthDate" type="xs:date"/>

@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -42,8 +43,10 @@ public class MerchantService implements IMerchantService {
         MerchantsStatus status = new MerchantsStatus();
 
         Merchant merchantToCreate = new Merchant();
+        merchantToCreate.setCreateDate(new Date());
         merchantToCreate.setName(request.getName());
         merchantToCreate.setLastName(request.getLastName());
+        merchantToCreate.setBirthDate(request.getBirthDate().toGregorianCalendar().getTime());
         List<Address> addresses = request.getAddresses().stream()
                 .map(ad -> addressMapper.dtoToEntity(ad)).collect(Collectors.toList());
         addresses.stream().forEach(ad -> ad.setMerchant(merchantToCreate));

@@ -13,6 +13,7 @@ import com.smile.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.Objects;
 
 @Service
@@ -34,6 +35,7 @@ public class ProductService implements IProductService {
         ProductsStatus status = new ProductsStatus();
 
         Product productToCreate = new Product();
+        productToCreate.setCreateDate(new Date());
         productToCreate.setLabel(request.getLabel());
         productToCreate.setUnitPrice(request.getUnitPrice());
         productToCreate.setCurrency(request.getCurrency());

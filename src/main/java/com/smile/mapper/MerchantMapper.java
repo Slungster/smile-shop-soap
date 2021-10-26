@@ -25,6 +25,7 @@ public class MerchantMapper {
         merchant.setMerchantId(merchantDto.getId());
         merchant.setName(merchantDto.getName());
         merchant.setLastName(merchantDto.getLastName());
+        merchant.setBirthDate(merchantDto.getBirthDate().toGregorianCalendar().getTime());
         List<Address> addresses = merchantDto.getAddresses().stream()
                 .map(ad -> addressMapper.dtoToEntity(ad)).collect(Collectors.toList());
 
