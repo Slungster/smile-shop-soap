@@ -1,0 +1,94 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.smileshop.com/shop-ws"
+           targetNamespace="http://www.smileshop.com/shop-ws" elementFormDefault="qualified">
+
+    <xs:complexType name="merchantsStatus">
+        <xs:sequence>
+            <xs:element name="statusCode" type="xs:string"/>
+            <xs:element name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="getMerchantRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="merchantId" type="xs:long" minOccurs="1" maxOccurs="1" nillable="true"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getMerchantResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="merchantDto" type="tns:merchantDto"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addMerchantRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="createDate" type="xs:date"/>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="lastName" type="xs:string"/>
+                <xs:element name="birthDate" type="xs:date"/>
+                <xs:element name="addresses" type="tns:addressDto" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="addMerchantResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="merchantsStatus" type="tns:merchantsStatus"/>
+                <xs:element name="merchantDto" type="tns:merchantDto"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updateMerchantRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="merchantDto" type="tns:merchantDto"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updateMerchantResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="merchantsStatus" type="tns:merchantsStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="deleteMerchantRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="merchantId" type="xs:long" minOccurs="1" maxOccurs="1" nillable="true"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="deleteMerchantResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="merchantsStatus" type="tns:merchantsStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="merchantDto">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long" minOccurs="1" maxOccurs="1" nillable="true"/>
+            <xs:element name="createDate" type="xs:date"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="lastName" type="xs:string"/>
+            <xs:element name="birthDate" type="xs:date"/>
+            <xs:element name="addresses" type="tns:addressDto" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="addressDto">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long" minOccurs="1" maxOccurs="1" nillable="true"/>
+            <xs:element name="number" type="xs:int"/>
+            <xs:element name="street" type="xs:string"/>
+            <xs:element name="zipcode" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
