@@ -2,7 +2,13 @@ package com.smile.service;
 
 import com.smile.entity.Address;
 import com.smile.entity.Merchant;
-import com.smile.gs_ws.*;
+import com.smile.gs_ws.AddMerchantRequest;
+import com.smile.gs_ws.AddMerchantResponse;
+import com.smile.gs_ws.DeleteMerchantRequest;
+import com.smile.gs_ws.DeleteMerchantResponse;
+import com.smile.gs_ws.MerchantsStatus;
+import com.smile.gs_ws.UpdateMerchantRequest;
+import com.smile.gs_ws.UpdateMerchantResponse;
 import com.smile.mapper.AddressMapper;
 import com.smile.mapper.MerchantMapper;
 import com.smile.repository.MerchantRepository;

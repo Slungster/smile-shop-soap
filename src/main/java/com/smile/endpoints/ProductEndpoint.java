@@ -1,6 +1,11 @@
 package com.smile.endpoints;
 
-import com.smile.gs_ws.*;
+import com.smile.gs_ws.AddProductRequest;
+import com.smile.gs_ws.AddProductResponse;
+import com.smile.gs_ws.DeleteProductRequest;
+import com.smile.gs_ws.DeleteProductResponse;
+import com.smile.gs_ws.UpdateProductRequest;
+import com.smile.gs_ws.UpdateProductResponse;
 import com.smile.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;

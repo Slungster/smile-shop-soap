@@ -3,7 +3,6 @@ package com.smile.endpoints;
 import com.smile.gs_ws.AssociationRequest;
 import com.smile.gs_ws.AssociationResponse;
 import com.smile.service.MerchantProductAssociationService;
-import com.smile.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;

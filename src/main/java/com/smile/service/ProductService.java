@@ -1,7 +1,13 @@
 package com.smile.service;
 
 import com.smile.entity.Product;
-import com.smile.gs_ws.*;
+import com.smile.gs_ws.AddProductRequest;
+import com.smile.gs_ws.AddProductResponse;
+import com.smile.gs_ws.DeleteProductRequest;
+import com.smile.gs_ws.DeleteProductResponse;
+import com.smile.gs_ws.ProductsStatus;
+import com.smile.gs_ws.UpdateProductRequest;
+import com.smile.gs_ws.UpdateProductResponse;
 import com.smile.mapper.ProductMapper;
 import com.smile.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
