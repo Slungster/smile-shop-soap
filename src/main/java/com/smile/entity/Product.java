@@ -44,7 +44,7 @@ public class Product implements Serializable {
 /*    @ManyToMany(mappedBy = "products")
     private Set<Merchant> merchants = new HashSet<>();*/
 
-    @OneToMany(mappedBy = "product", cascade= CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "product", cascade= CascadeType.ALL)
     private Set<MerchantProduct> merchantProduct;
 
     public Product() {

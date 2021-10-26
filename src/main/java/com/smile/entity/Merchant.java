@@ -36,7 +36,7 @@ public class Merchant implements Serializable {
     @Column(name="birth_date")
     private Date birthDate;
 
-    @OneToMany(mappedBy = "merchant", cascade= CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "merchant", cascade= CascadeType.ALL)
     private List<Address> addresses;
 
 /*    @ManyToMany(cascade = { CascadeType.ALL })
@@ -47,7 +47,7 @@ public class Merchant implements Serializable {
     )
     private Set<Product> products = new HashSet<>();*/
 
-    @OneToMany(mappedBy = "merchant", cascade=CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "merchant", cascade=CascadeType.ALL)
     private Set<MerchantProduct> merchantProduct;
 
     public Merchant() {
